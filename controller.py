@@ -86,3 +86,7 @@ def mouse_doubleclick_to_item(x, y):
     time.sleep(0.05)
     mouse.release(Button.left)
     time.sleep(0.05)
+
+def mouse_click_and_doubleclick_to_item(x, y):
+    mouse_click_to_item(x, y)
+    mouse_doubleclick_to_item(x, y)

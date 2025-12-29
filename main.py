@@ -47,7 +47,6 @@ def farming():
 
         time_index = 1
         while time_index <= 100:
-            print(f"{time.ctime()}: Круг №{time_index}")
             logging(f"Круг №{time_index}")
             global_run_and_farm(pers_fact, pause_event)
             time_index = time_index + 1
@@ -75,7 +74,7 @@ def main():
         monitor_thread.join(2.0)
         farm_thread.join(2.0)
 
-        print(f"{time.ctime()}: Потоки остановлены вручную")
+        logging(f"Потоки остановлены вручную")
 
 
 if __name__ == "__main__":

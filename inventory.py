@@ -15,12 +15,10 @@ def save_items_in_bank():
                     for index in range(0, len(entry)):
                         entry1 = locate_item(items[value_item][0], items[value_item][1],
                                              bank_stash_bags[bank_stash_bag][2], 1093, 275, 320, 220)
-                        mouse_click_to_item(entry1[0][0] + 1093, entry1[0][1] + 275)
-                        mouse_doubleclick_to_item(entry1[0][0] + 1093, entry1[0][1] + 275)
+                        mouse_click_and_doubleclick_to_item(entry1[0][0] + 1093, entry1[0][1] + 275)
                         logging(f"Предмет '{items[value_item][1]}' перемещен в банк")
                 else:
-                    mouse_click_to_item(entry[0][0] + 1093, entry[0][1] + 275)
-                    mouse_doubleclick_to_item(entry[0][0] + 1093, entry[0][1] + 275)
+                    mouse_click_and_doubleclick_to_item(entry[0][0] + 1093, entry[0][1] + 275)
                     logging(f"Предмет '{items[value_item][1]}' перемещен в банк")
             else:
                 pass
@@ -36,10 +34,8 @@ def sale_items_in_store():
         empty_bag_marker = validate_image("run_data/empty_slots.png", 1093, 275, 320, 220, 0.95)
 
         for bank_stash_bag_slot in range(0, len(bank_stash_bags_slots)):
-            mouse_click_to_item(bank_stash_bags_slots[bank_stash_bag_slot][0],
+            mouse_click_and_doubleclick_to_item(bank_stash_bags_slots[bank_stash_bag_slot][0],
                                 bank_stash_bags_slots[bank_stash_bag_slot][1])
-            mouse_doubleclick_to_item(bank_stash_bags_slots[bank_stash_bag_slot][0],
-                                      bank_stash_bags_slots[bank_stash_bag_slot][1])
         if empty_bag_marker:
             logging(f"В сумке много пустых слотов. Продажа окончена")
             break
