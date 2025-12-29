@@ -17,12 +17,10 @@ def save_items_in_bank():
                                              bank_stash_bags[bank_stash_bag][2], 1093, 275, 320, 220)
                         mouse_click_to_item(entry1[0][0] + 1093, entry1[0][1] + 275)
                         mouse_doubleclick_to_item(entry1[0][0] + 1093, entry1[0][1] + 275)
-                        print(f"{time.ctime()}: Предмет '{items[value_item][1]}' перемещен в банк")
                         logging(f"Предмет '{items[value_item][1]}' перемещен в банк")
                 else:
                     mouse_click_to_item(entry[0][0] + 1093, entry[0][1] + 275)
                     mouse_doubleclick_to_item(entry[0][0] + 1093, entry[0][1] + 275)
-                    print(f"{time.ctime()}: Предмет '{items[value_item][1]}' перемещен в банк")
                     logging(f"Предмет '{items[value_item][1]}' перемещен в банк")
             else:
                 pass
@@ -43,7 +41,7 @@ def sale_items_in_store():
             mouse_doubleclick_to_item(bank_stash_bags_slots[bank_stash_bag_slot][0],
                                       bank_stash_bags_slots[bank_stash_bag_slot][1])
         if empty_bag_marker:
-            print(f"{time.ctime()}: В сумке много пустых слотов. Продажа окончена")
+            logging(f"В сумке много пустых слотов. Продажа окончена")
             break
 
     mouse_click(1430, 540)
@@ -71,7 +69,6 @@ def use_glad_kris_and_drop_useless_items():
                 mouse_doubleclick_to_item(entry1[0][0] + 1022, entry1[0][1] + 251)
                 sleeper(1, "Ожидание окна подтверждения")
                 mouse_click(895, 565)
-                print(f"{time.ctime()}: 'Гладиаторский темный кристалл' использован")
                 logging("'Гладиаторский темный кристалл' использован")
         else:
             pass
@@ -125,7 +122,6 @@ def use_glad_kris():
                 mouse_doubleclick_to_item(entry1[0][0] + 1022, entry1[0][1] + 251)
                 sleeper(1, "Ожидание окна подтверждения")
                 mouse_click(895, 565)
-                print(f"{time.ctime()}: 'Гладиаторский темный кристалл' использован")
                 logging("'Гладиаторский темный кристалл' использован")
         else:
             pass

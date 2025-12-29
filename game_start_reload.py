@@ -1,6 +1,7 @@
 from validation import *
 from main_data import *
 from controller import *
+import sys
 
 
 def start_game(personage):
@@ -13,7 +14,6 @@ def start_game(personage):
         sleeper(6, "Переход к выбору героев")
         mouse_click(personages[personage][0], personages[personage][1])
         mouse_click(1030, 624)
-        print(f"{time.ctime()}: Произведён вход в учетную запись, выбран '{personages[personage][2]}'")
         logging(f"Произведён вход в учетную запись, выбран '{personages[personage][2]}'")
         sleeper(8, "Ждем прогруза в игру")
         entry = locate_image("run_data/game_events_log.png", 460, 25, 1000, 940, 0.95)
@@ -21,7 +21,6 @@ def start_game(personage):
             mouse_click(entry[0][0] + 462, entry[0][1] + 27)
 
     else:
-        print(time.ctime() + ": Оверкингс не запущен")
         logging("Оверкингс не запущен")
         screenshot = pyautogui.screenshot(region=(0, 0, 1920, 1080))
         screenshot.save(r"logs/debug_screenshots/start_game_debug.png")
@@ -32,7 +31,6 @@ def start_game(personage):
 def reload_game(personage):
     sleeper(1, "Перезапуск игры")
     mouse_click(1895, 10)
-    print(time.ctime() + ": Overkings закрыт")
     logging("Overkings закрыт")
     sleeper(2, 'Подготовка к запуску игры')
     start_game(personage)

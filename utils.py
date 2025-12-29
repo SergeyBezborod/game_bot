@@ -7,13 +7,15 @@ from main_data import *
 template_cache = {}
 
 
-def logging(text):
-    """Логирование в файл"""
+def logging(text: str):
+    """Логирование в файл и консоль"""
+    time_now = time.ctime()
     file = open('logs/bot_log.txt', 'a')
-    file.writelines(time.ctime() + ": " + text + "\n")
+    file.writelines(time_now + ": " + text + "\n")
+    print(f"{time_now}: {text}")
 
 
-def sleeper(seconds, text):
+def sleeper(seconds: int, text: str):
     """Ожидание выполнения какого-то действия с таймером"""
     for second in range(seconds):
         time.sleep(1)
@@ -27,7 +29,7 @@ def preload_images():
             print(f"{time.ctime()}: Папка '{folder}' не найдена")
             continue
 
-        print(f"{time.ctime()}: Загрузка изображений из папки: {folder}")
+        logging(f"Загрузка изображений из папки: {folder}")
 
         for root, _, files in os.walk(folder):
             for file in files:
@@ -37,8 +39,8 @@ def preload_images():
                         img = cv2.imread(full_path, cv2.IMREAD_COLOR)
                         if img is not None:
                             template_cache[full_path] = img
-                            print(f"{time.ctime()}: '{file}' загружена в кеш")
+                            logging(f"'{file}' загружена в кеш")
                         else:
-                            print(f"{time.ctime()}: Ошибка загрузки '{file}'")
+                            logging(f"Ошибка загрузки '{file}'")
                     except Exception as e:
-                        print(f"{time.ctime()}: Ошибка при обработке '{file}' - {str(e)}")
+                        logging(f"Ошибка при обработке '{file}' - {str(e)}")

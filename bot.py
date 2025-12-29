@@ -32,7 +32,6 @@ def global_run_and_farm(personage, event):
                                         farm_loc(locs[loc][3], locs[loc][6], locs[loc][7], personage, event)
                                         event.wait()
                                         loc_counter = loc_counter + 1
-                                        print(f"{time.ctime()}: Счётчик локаций: {loc_counter}")
                                         logging(f"Счётчик локаций: {loc_counter}")
                                     else:
                                         """Если не открылась локация"""
@@ -107,5 +106,4 @@ def global_run_and_farm(personage, event):
 
     loop_t_finish = time.time()
     loop_t = loop_t_finish - loop_t_start
-    print(f"{time.ctime()}: Время круга: {int(loop_t // 3600)}ч {int((loop_t // 60) % 60)}м {int(loop_t % 60)}c")
     logging(f"Время круга: {int(loop_t // 3600)}ч {int((loop_t // 60) % 60)}м {int(loop_t % 60)}c")

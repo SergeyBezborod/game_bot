@@ -332,5 +332,5 @@ items = [
     # ['run_data/value_items/item_tikva.png', 'Жуткая тыква'],
     # ['run_data/value_items/item_ledenec.png', 'Леденцы'],
     # ['run_data/value_items/item_karamel.png', 'Карамель на палочке'],
-    # ['run_data/value_items/item_snow.png', 'Волшебная снежинка']
+    ['run_data/value_items/item_snow.png', 'Волшебная снежинка']
 ]

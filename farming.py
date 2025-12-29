@@ -88,5 +88,4 @@ def farm_loc(loc_name, n_lvl, delay, personage, event):
         event.wait()
     loc_t_finish = time.time()
     loc_t = loc_t_finish - loc_t_start
-    print(f"{time.ctime()}: Время локации: {int(loc_t // 3600)}ч {int((loc_t // 60) % 60)}м {int(loc_t % 60)}c")
     logging(f"Время локации: {int(loc_t // 3600)}ч {int((loc_t // 60) % 60)}м {int(loc_t % 60)}c")
